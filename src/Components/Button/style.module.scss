@@ -1,0 +1,98 @@
+@import "../../Constants/Colors.scss";
+@import "../../Constants/Dimensions.scss";
+
+.button {
+  border-radius: 10px;
+  transition: 100ms;
+  cursor: pointer;
+  padding: 12px 15px;
+}
+
+.disabled {
+  opacity: 0.4;
+}
+
+.disabled:hover {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.submitTheme {
+  background-color: $secondary;
+}
+
+.submitTheme:hover {
+  background-color: lighten($secondary, 5%);
+}
+
+.greenTheme {
+  background-color: $medGreen;
+}
+
+.greenTheme:hover {
+  background-color: lighten($medGreen, 5%);
+}
+
+.neutralTheme {
+  background-color: $charcoal;
+}
+
+.neutralTheme:hover {
+  background-color: lighten($charcoal, 5%);
+}
+
+.deleteTheme {
+  background-color: $delete;
+}
+
+.deleteTheme:hover {
+  background-color: lighten($delete, 5%);
+}
+
+.callToActionWhiteTheme {
+  transition: 300ms;
+  background-color: transparent;
+  border: 2px solid white;
+  * {
+    font-weight: 600;
+    color: white !important;
+  }
+}
+
+.callToActionWhiteTheme:hover {
+  background-color: white;
+  box-shadow: 0px 2px 30px 1px rgba(0, 0, 0, 0.222);
+  transform: translateY(-2px);
+  * {
+    color: $primary !important;
+  }
+}
+
+.callToActionBlackTheme {
+  transition: 300ms;
+  background-color: transparent;
+  border: 2px solid $primary;
+  color: $primary !important;
+  * {
+    color: $primary !important;
+  }
+}
+
+.callToActionBlackTheme:hover {
+  background-color: $primary;
+  transform: translateY(-2px);
+  box-shadow: 0px 2px 20px 5px rgba(0, 0, 0, 0.222);
+  * {
+    color: white !important;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .callToActionBlackTheme {
+    padding: 4px 8px !important;
+    font-weight: 500 !important;
+  }
+  .callToActionWhiteTheme {
+    padding: 4px 8px !important;
+  }
+}

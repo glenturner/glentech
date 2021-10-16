@@ -1,0 +1,38 @@
+@import "../../Constants/Colors.scss";
+@import "../../Constants/Dimensions.scss";
+
+.logo {
+  padding: 20px;
+}
+
+@media screen and (max-width: $regularDisplay) {
+  h1 {
+    font-size: 50px;
+  }
+  
+  h2 {
+    font-size: 30px;
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+  
+  h4 {
+    font-size: 18px;
+    margin: 0;
+    padding: 0;
+  }
+  p {
+    font-size: 17px !important;
+    line-height: 1.8rem;
+  }
+}
+@media screen and (max-width: 500px) {
+  .logoText {
+    display: none;
+  }
+}
+
+
+

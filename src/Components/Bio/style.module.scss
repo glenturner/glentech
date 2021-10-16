@@ -1,0 +1,13 @@
+@import "../../Constants/Colors.scss";
+@import "../../Constants/Dimensions.scss";
+
+.wrapper {
+    width: 100%;
+    background-color: $primary;
+    color: #fff;
+    padding: 75px;
+    p {
+        width: 50%;
+        text-align: center;
+    }
+}

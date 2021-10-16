@@ -1,0 +1,32 @@
+@import "../../Constants/Colors.scss";
+@import "../../Constants/Dimensions.scss";
+
+.wrapper {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fcfffcc4;
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  box-sizing: border-box;
+  padding: 10px 15px;
+  padding-left: 100px;
+  user-select: none;
+  h1 {
+    font-size: 25px;
+  }
+}
+
+.navSection {
+  display: flex;
+}
+
+@media screen and (max-width: $tablet) {
+  .wrapper {
+    padding-left: 40px !important;
+  }
+  .navSection {
+    display: none !important;
+  }
+}

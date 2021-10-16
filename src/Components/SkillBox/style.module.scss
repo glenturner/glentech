@@ -1,0 +1,15 @@
+@import "../../Constants/Colors.scss";
+@import "../../Constants/Dimensions.scss";
+
+.box {
+    padding: 20px;
+    span {
+        font-weight: 600;
+        font-size: 18px;
+        padding: 10px 0;
+    }
+}
+
+.box_image {
+    padding: 20px 0;
+}
