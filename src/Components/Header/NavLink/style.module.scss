@@ -1,0 +1,52 @@
+@import "../../../Constants/Colors.scss";
+
+.wrapper {
+  background: rgba(0, 0, 0, 0);
+  transition: 200ms;
+  position: relative;
+  padding: 10px;
+  margin: 0px 4px;
+  user-select: none;
+  span {
+    font-weight: 600;
+    font-size: 18px;
+    user-select: none;
+  }
+}
+
+.primary {
+  cursor: pointer;
+  transition: 200ms;
+  white-space: nowrap;
+  border-bottom: 4px solid rgba(0,0,0,0);
+  padding-bottom: 5px;
+  box-sizing: border-box;
+  width: '100%'
+}
+.primary:hover {
+  transform: translateY(-2px);
+  border-bottom: 4px solid $primary;
+}
+
+.primaryActive {
+  transform: translateY(-2px) !important;
+  border-bottom: 4px solid $primary !important;
+}
+
+.alternate {
+  border: 1px solid black;
+  color: black;
+}
+
+.alternate:hover {
+  color: white;
+  background: rgba(0, 162, 255, 0.555);
+}
+
+.subLink {
+  border-radius: 10px;
+}
+
+.subLink:hover {
+  background: rgba(0, 144, 196, 0.13);
+}

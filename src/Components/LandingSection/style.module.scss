@@ -1,0 +1,20 @@
+@import "../../Constants/Colors.scss";
+
+.wrapper {
+    width: 100%;
+    height: 70vh;
+    h3 {
+        font-size: 32px;
+    }
+}
+
+.sub_title {
+    line-height: 1.5;
+    font-weight: 300;
+    font-family: "europa", sans-serif;
+    font-size: 24px;
+}
+
+.avatar {
+    padding: 50px 0;
+}
