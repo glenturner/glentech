@@ -1,0 +1,26 @@
+@import "../../../Constants/Dimensions.scss";
+@import "../../../Constants/Colors.scss";
+@import "../../../Constants/DefaultFonts.scss";
+
+.button_submit {
+    padding: 3px 20px;
+    border-radius: 3px;
+    margin-top: 1rem;
+    background-color: $primary;
+}
+
+.button_submit:hover {
+    background-color: $primary !important;
+    opacity: 0.8;
+}
+
+
+@media only screen and (max-width: $smallMobileDisplay) {
+    .button_submit {
+        width: 100% !important;
+        margin-top: 1rem;
+    }
+    .header {
+        font-size: 24px !important;
+    }
+}

@@ -12,11 +12,6 @@
     width: 100px;
 }
 
-.author {
-    font-size: 3rem;
-    color: rgba(255, 255, 255, 0.623);
-}
-
 .quote_wrapper {
     color: #000000;
     width: 100%;
@@ -57,6 +52,7 @@
 
 .dots {
     margin-top: 2rem;
+    cursor: pointer;
 }
 
 .singleDot {

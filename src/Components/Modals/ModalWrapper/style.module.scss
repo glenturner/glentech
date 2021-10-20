@@ -1,0 +1,33 @@
+@import "../../../Constants/Dimensions.scss";
+@import "../../../Constants/Colors.scss";
+
+@media only screen and (max-width: $smallDisplay) {
+    .wrapper {
+        width: 50vw !important;
+    }
+}
+
+@media only screen and (max-width: 1250px) {
+    .wrapper {
+        width: 55vw !important;
+    }
+}
+
+@media only screen and (max-width: 955px) {
+    .wrapper {
+        width: 65vw !important;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .wrapper {
+        width: 75vw !important;
+    }
+}
+
+@media only screen and (max-width: $smallMobileDisplay) {
+    .wrapper {
+        width: 85vw !important;
+    }
+}
+

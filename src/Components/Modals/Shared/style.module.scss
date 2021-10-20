@@ -1,0 +1,49 @@
+@import "../../../Constants/Dimensions.scss";
+@import "../../../Constants/Colors.scss";
+
+.inputWrapper {
+    width: 100%;
+    margin: 0.4rem 0;
+    user-select: none;
+}
+
+.inputBox {
+    width: 100%;
+    border-radius: 3px;
+    color: #000000;
+    caret-color:#000000;
+    transition: all 100ms;
+    height: 40px;
+    background-color: #fff;
+    font-size: 16px;
+    outline: none;
+    border: 1px solid #cbd6e2;
+    margin-top: 0.5rem;
+}
+
+.label {
+    box-sizing: border-box;
+    border-radius: 3px;
+    letter-spacing: 0.02051em;
+    text-align: left;
+    color: $gray;
+    font-weight: bold;
+    padding: 0.5rem 0 !important;
+    margin-bottom: 0.5rem !important;
+    outline: none;
+}
+
+.inputBox::placeholder {
+    color: $gray;
+    // color: #d3dde6;
+}
+
+.inputBox:hover {
+    border-color: $primary;
+}
+
+.inputBox:focus {
+    box-shadow: 0 0 0 1px $primary;
+    outline: 0;
+    background-color: transparent;
+}

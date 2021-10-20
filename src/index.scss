@@ -63,7 +63,8 @@ p {
 
 a {
   text-decoration: none;
-  color: #516f90;
+  // color: #516f90;
+  color: #201E50;
 } 
 
 ::-webkit-scrollbar {
@@ -76,4 +77,10 @@ width: 0 !important;
 height: 0 !important;
   /*Chrome, Safari, Edge*/
   display: none !important;
+}
+
+.MuiBackdrop-root {
+  background-color: rgba(254, 254, 254, 0.619) !important;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }

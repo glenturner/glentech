@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Flex } from './Components/Flex';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { Landing } from './Assets';
+import { ContactModal } from './Components/Modals/ContactModal';
+import { SuccessAlert } from './Components/Alerts';
 import { Header } from './Components/Header';
 import { Testimonials } from './Components/Testimonials';
 import { ProjectsSection } from './Components/ProjectsSection';
@@ -45,6 +47,7 @@ function App() {
     window.onresize = resizeListener;
   }, [])
 
+
   return (
     <Router>
       <Flex center column>
@@ -56,6 +59,8 @@ function App() {
         <ProjectsSection />
         <Testimonials />
         <Footer />
+        <ContactModal />
+        <SuccessAlert />
       </Flex>
     </Router>
   );

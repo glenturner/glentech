@@ -27,7 +27,7 @@ export const NavLink = (props: {
         style={{ ...props.style }}
         onClick={() => history.push(props.route)}
       >
-        <span>{props.text}</span>
+        <Link smooth to={props.route}><span>{props.text}</span></Link>
         {hovered && props.subItems?.length &&
           <Flex column onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{ padding: 10, borderRadius: 10, background: "white", position: 'absolute', top: '42px', boxShadow: '0px 15px 30px -5px rgba(0,0,0,0.5)' }}>
             {props.subItems.map((item, idx) => <Link smooth to={item.to}><Flex className={`${style.wrapper} ${style.subLink}`} style={{}}><span>{item.text}</span></Flex></Link>)}

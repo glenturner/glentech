@@ -5,7 +5,6 @@
   transition: 200ms;
   position: relative;
   padding: 10px;
-  margin: 0px 4px;
   user-select: none;
   span {
     font-weight: 600;
@@ -18,19 +17,22 @@
   cursor: pointer;
   transition: 200ms;
   white-space: nowrap;
-  border-bottom: 4px solid rgba(0,0,0,0);
+  // border-bottom: 4px solid rgba(0,0,0,0);
+  border-bottom: 3px solid rgba(0,0,0,0);
+  margin: 0 15% 0 15%;
   padding-bottom: 5px;
   box-sizing: border-box;
-  width: '100%'
 }
 .primary:hover {
   transform: translateY(-2px);
-  border-bottom: 4px solid $primary;
+  border-bottom: 3px solid $primary;
+  margin: 0 15% 0 15%;
 }
 
 .primaryActive {
   transform: translateY(-2px) !important;
-  border-bottom: 4px solid $primary !important;
+  border-bottom: 3px solid $primary !important;
+  margin: 0 15% 0 15%;
 }
 
 .alternate {
