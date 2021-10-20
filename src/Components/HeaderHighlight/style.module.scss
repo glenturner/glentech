@@ -1,0 +1,19 @@
+@import "../../Constants/Dimensions.scss";
+@import "../../Constants/Colors.scss";
+
+.headerHighlight {
+    background-color: $primary;
+    height: 0.25rem;
+    border-radius: 5px;
+    width: 6rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
+
+@media only screen and (max-width: 1220px) {
+    .headerHighlight {
+        height: 0.3rem;
+        width: 2.5rem;
+        margin-bottom: 0.5rem;
+    }
+}

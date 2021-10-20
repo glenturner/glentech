@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Flex } from './Components/Flex';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Landing } from './Assets';
 import { Header } from './Components/Header';
+import { Testimonials } from './Components/Testimonials';
+import { ProjectsSection } from './Components/ProjectsSection';
+import { SkillsSection } from './Components/SkillsSection';
+import { Footer } from './Components/Footer';
 import { ReusableStaticImage } from './Components/ReusableStaticImage';
 import { Bio } from './Components/Bio';
 import { WindowSizes } from './Redux/Models/Utility/WIndowSizes';
@@ -41,12 +46,18 @@ function App() {
   }, [])
 
   return (
-    <Flex center column>
-      <Header />
-      <LandingSection />
-      <ReusableStaticImage image={Landing} width={40} />
-      <Bio />
-    </Flex>
+    <Router>
+      <Flex center column>
+        <Header />
+        <LandingSection />
+        <ReusableStaticImage image={Landing} width={40} />
+        <Bio />
+        <SkillsSection />
+        <ProjectsSection />
+        <Testimonials />
+        <Footer />
+      </Flex>
+    </Router>
   );
 }
 

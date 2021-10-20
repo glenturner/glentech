@@ -13,11 +13,6 @@ body {
       -ms-overflow-style: -ms-autohiding-scrollbar !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 button {
   outline: none;
   border: none;
@@ -29,20 +24,28 @@ button {
 
 h1 {
   font-size: 60px;
+  letter-spacing: 0.02051em;
+  color: #201E50;
 }
 
 h2 {
   font-size: 40px;
+  letter-spacing: 0.02051em;
+  color: #201E50;
 }
 
 h3 {
   font-size: 25px;
+  letter-spacing: 0.02051em;
+  color: #201E50;
 }
 
 h4 {
   font-size: 20px;
   margin: 0;
   padding: 0;
+  letter-spacing: 0.02051em;
+  color: #201E50;
 }
 
 ul {

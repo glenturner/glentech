@@ -1,0 +1,91 @@
+@import "../../Constants/Dimensions.scss";
+@import "../../Constants/Colors.scss";
+
+.wrapper {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 100px 50px 50px 50px;
+  border-top: 2px solid rgb(241, 241, 241);
+  background: $offWhite;
+  user-select: none;
+}
+
+.nav_footer {
+}
+
+.navGroup {
+  padding: 10px 30px;
+  .mainButton {
+    cursor: pointer;
+    margin-bottom: 5px;
+    color: $violet;
+    transition: 200ms;
+  }
+
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0;
+    color: $violet !important;
+    li {
+      margin: 0;
+      padding: 5px 0px;
+      color: $violet !important;
+      .mainDivider {
+        height: 4px;
+        width: 50%;
+        margin: 1px 0px;
+        transition: 200ms;
+        background: $primary;
+        border-radius: 5px;
+      }
+      button {
+        cursor: pointer;
+        transition: 200ms;
+        white-space: nowrap;
+        font-size: 18px;
+        font-weight: 600;
+        border-bottom: 4px solid rgba(0,0,0,0);
+        padding-bottom: 5px;
+        box-sizing: border-box;
+        width: '100%'
+      }
+    }
+  }
+}
+
+li:hover {
+  .mainDivider {
+    width: 100% !important;
+  }
+}
+
+.grabber_row {
+  padding: 20px 0 0 0;
+  margin-top: 20px;
+  span {
+    font-size: 24px;
+    text-align: center;
+    color: $gray;
+  }
+}
+
+.linkedin_icon {
+  padding: 5px;
+}
+
+.linkedin_icon:hover {
+  transform: translateY(-2px);
+  transition: 200ms;
+}
+
+.github_icon {
+  padding: 5px;
+}
+
+.github_icon:hover {
+  transform: translateY(-2px);
+  transition: 200ms;
+}
