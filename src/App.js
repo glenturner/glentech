@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Flex } from './Components/Flex';
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Landing } from './Assets';
 import { ContactModal } from './Components/Modals/ContactModal';
 import { SuccessAlert } from './Components/Alerts';
@@ -57,9 +57,8 @@ function App() {
     window.onresize = resizeListener;
   }, [])
 
-
-  return (
-    <Router>
+  const Content = useCallback(() => {
+    return (
       <Flex center column style={{ overflow: 'hidden' }}>
         <Header />
         <LandingSection />
@@ -73,6 +72,13 @@ function App() {
         <ContactModal />
         <SuccessAlert />
       </Flex>
+    )
+  }, [])
+
+
+  return (
+    <Router>
+      <Route exact path="/" component={Content} />
     </Router>
   );
 }
