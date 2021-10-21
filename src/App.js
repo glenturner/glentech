@@ -1,10 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Flex } from './Components/Flex';
 import { BrowserRouter as Router } from "react-router-dom";
 import { Landing } from './Assets';
 import { ContactModal } from './Components/Modals/ContactModal';
 import { SuccessAlert } from './Components/Alerts';
+import { MobileDrawer } from './Components/MobileDrawer';
 import { Header } from './Components/Header';
 import { Testimonials } from './Components/Testimonials';
 import { ProjectsSection } from './Components/ProjectsSection';
@@ -42,6 +43,15 @@ function App() {
       updateWindowSize(WindowSizes.large);
   }
 
+  const landingImageSize = useMemo(() => {
+    switch (appSize) {
+      case WindowSizes.mobile: return 29
+      case WindowSizes.smallMobile: return 24
+      case WindowSizes.tinyMobile: return 18
+      default: return 40
+    }
+  }, [appSize])
+
   useEffect(() => {
     resizeListener();
     window.onresize = resizeListener;
@@ -50,15 +60,16 @@ function App() {
 
   return (
     <Router>
-      <Flex center column>
+      <Flex center column style={{ overflow: 'hidden' }}>
         <Header />
         <LandingSection />
-        <ReusableStaticImage image={Landing} width={40} />
+        <ReusableStaticImage image={Landing} width={landingImageSize} />
         <Bio />
         <SkillsSection />
         <ProjectsSection />
         <Testimonials />
         <Footer />
+        <MobileDrawer />
         <ContactModal />
         <SuccessAlert />
       </Flex>

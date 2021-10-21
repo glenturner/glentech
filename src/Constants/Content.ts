@@ -21,7 +21,8 @@ export const skills = [
         subTitle: 'Things I enjoy designing:',
         description: 'I value simple content structure, clean design patterns, and thoughtful interactions.',
         skills: 'UX, UI, Web, Mobile, Apps',
-        width: 5
+        width: 5,
+        id: 'ui'
 
     },
     {
@@ -30,7 +31,8 @@ export const skills = [
         subTitle: 'Languages I speak:',
         description: 'I like to code things from scratch, and enjoy bringing ideas to life in the browser.',
         skills: 'HTML, CSS, Sass, Javascript, React',
-        width: 5
+        width: 5,
+        id: 'ux'
 
     },
     {
@@ -39,7 +41,8 @@ export const skills = [
         subTitle: 'Marketing applications I enjoy:',
         description: 'I enjoy valuable content that allows the user to get what they need quickly.',
         skills: 'SEM, SMM, PPC, Content',
-        width: 4
+        width: 4,
+        id: 'marketing'
 
     },
 ]

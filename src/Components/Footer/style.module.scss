@@ -10,9 +10,6 @@
   user-select: none;
 }
 
-.nav_footer {
-}
-
 .navGroup {
   padding: 10px 30px;
   .mainButton {
@@ -88,4 +85,23 @@ li:hover {
 .github_icon:hover {
   transform: translateY(-2px);
   transition: 200ms;
+}
+
+@media only screen and (max-width: $tablet) {
+  li {
+  .mainDivider {
+    width: 90% !important;
+  }
+}
+}
+
+@media only screen and (max-width: 410px) {
+  .navGroupWrapper {
+      flex-direction: column !important;
+  }
+  .grabber_row {
+    span {
+      font-size: 16px;
+    }
+  }
 }

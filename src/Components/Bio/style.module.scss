@@ -7,7 +7,20 @@
     color: #fff !important;
     padding: 150px 75px;
     p {
-        width: 50%;
+        width: 100%;
         text-align: center;
+        font-weight: 500;
+    }
+}
+
+@media only screen and (max-width: $tablet) {
+    .wrapper {
+        padding: $minPadding;
+    }
+}
+
+@media only screen and (max-width: $mobileDisplay) {
+    .wrapper {
+        padding: $mobilePadding;
     }
 }

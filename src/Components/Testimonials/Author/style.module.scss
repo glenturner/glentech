@@ -73,3 +73,30 @@
     border-width: 0.2rem;
     border-color: lighten($gray, 40%);
 }
+
+
+@media only screen and (max-width: $tablet) {
+    .quote_wrapper {
+        span {
+            width: 80% !important;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .quote_wrapper {
+        span {
+            font-size: 24px;
+            padding: $mobilePadding;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .quote_wrapper {
+        span {
+            width: 100%;
+            font-size: 18px;
+        }
+    }
+}

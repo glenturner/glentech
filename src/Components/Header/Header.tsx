@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { NavLink } from "./NavLink";
 import { Flex } from "../Flex";
 import style from "./style.module.scss";
-import { HashLink as Link } from 'react-router-hash-link';
 import { Button } from "../Button";
 import { ForumOutlined } from "@material-ui/icons";
 import { ToggleContactModal } from "../../Redux/Actions";
@@ -18,14 +17,6 @@ export const Header = (props: any) => {
   const [isLarge, setIsLarge] = useState(true);
   const [selectedRoute, setSelectedRoute] = useState<any>(null);
 
-  const navGroups = {
-    // home: [
-    //   { text: "Our Commitment", to: '/home#commitment' },
-    //   { text: "Our Investment Philosophy", to: '/home#investment-philosophy' },
-    //   { text: "Explore Our Services", to: '/home#explore-services' },
-    // ],
-  }
-
   useEffect(() => {
     setSelectedRoute(history.location.pathname)
     //@ts-ignore
@@ -39,8 +30,6 @@ export const Header = (props: any) => {
     });
     return () => { unlisten() }
   }, [history])
-
-
 
 
   return (

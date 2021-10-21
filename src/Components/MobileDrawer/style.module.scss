@@ -1,0 +1,145 @@
+
+// @import '../../globalStyles/variables.scss';
+.topNavSecondary {
+    width: 50vw;
+    box-sizing: border-box;
+    box-shadow: -0.5rem 0 1.5rem 0 rgba(0, 0, 0, 0.075);
+    position: absolute;
+    right: 0;
+    z-index: 9999;
+    height: 100%;
+    flex: 1;
+    top: 0;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 255, 255);
+}
+
+.backgroundOverlay {
+    opacity: 0;
+    z-index: 9999;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.699);
+    width: 100vw;
+    height: 100vh;
+    right: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.logoWrapper {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-bottom-style: solid;
+    border-bottom-width: 0.2rem;
+    border-bottom-color: orange;
+}
+
+.logo {
+    margin-top: 1rem;
+    margin-left: 1rem;
+    height: 7rem;
+}
+
+.scrollable {
+    flex: 1;
+    overflow: scroll;
+    width: 100%;
+}
+
+.flexWrapper {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-top: 1.3rem;
+}
+
+.optionsList {
+    list-style: none;
+    display: flex;
+    box-sizing: border-box;
+    width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 0;
+}
+
+.linkIcon {
+    margin-right: 1rem;
+}
+
+
+.option {
+    cursor: pointer;
+    font-size: 1rem;
+    padding: 1rem 0;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: left;
+    padding-left: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+    text-decoration: none;
+    border-bottom: 0.1rem solid rgba(128, 128, 128, 0.116);
+}
+
+:local(.socialText) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+:local(.socialText h2) {
+    margin-top: 6rem;
+    font-size: 1.5rem !important;
+    text-align: center;
+    color: rgb(66, 66, 66);
+    // font-family: RobotoBold;
+}
+
+:local(.socialMediaIcons) {
+    display: flex;
+    width: 100%;
+    margin: 3rem 0;
+    justify-content: center;
+    align-items: center;
+}
+
+:local(.socialMediaIcons span) {
+    margin: 0 1rem
+}
+
+.location_wrapper_mobile {
+    display: flex !important;
+    box-sizing: border-box !important;
+    span {
+        font-size: 15px !important;
+        margin: 20px 0;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:950px) {
+    .topNavSecondary {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width:565px) {
+    .topNavSecondary {
+        width: 70vw;
+    }
+}

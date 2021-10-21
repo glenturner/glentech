@@ -1,6 +1,7 @@
 import React, { useEffect, useState, ChangeEvent, useRef } from 'react';
 import { Flex } from '../../Flex';
 import { gsap } from 'gsap';
+import SR from 'scrollreveal';
 import { useInterval } from 'usehooks-ts'
 import { quotes } from '../../../Constants/Content';
 import { ReusableStaticImage } from '../../ReusableStaticImage';
@@ -45,11 +46,11 @@ export const Author = (props: any) => {
     }
 
     useEffect(() => {
-        // setQuoteInterval();
-    }, [index])
+        SR().reveal('#quotes', { opacity: 0.2, viewFactor: 0.3, scale: 0.9, delay: 0, reset: false, distance: '50px', origin: 'left' });
+    }, [])
 
     return (
-        <Flex column center className={style.wrapper}>
+        <Flex id="quotes" column center className={style.wrapper}>
             <Flex center column>
                 <div ref={quoteRef}>
                     <Flex center column className={style.quote_wrapper}>
