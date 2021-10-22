@@ -1,4 +1,4 @@
-import React, { useEffect, useState, ChangeEvent, useRef } from 'react';
+import React, { useEffect, useState, useMemo, useRef } from 'react';
 import { Flex } from '../../Flex';
 import { gsap } from 'gsap';
 import SR from 'scrollreveal';
@@ -45,12 +45,8 @@ export const Author = (props: any) => {
             { duration: 0.1, x: -100, opacity: 0 }, { opacity: 1, x: 0 })
     }
 
-    useEffect(() => {
-        SR().reveal('#quotes', { opacity: 0.2, viewFactor: 0.3, scale: 0.9, delay: 0, reset: false, distance: '50px', origin: 'left' });
-    }, [])
-
     return (
-        <Flex id="quotes" column center className={style.wrapper}>
+        <Flex column center className={style.wrapper}>
             <Flex center column>
                 <div ref={quoteRef}>
                     <Flex center column className={style.quote_wrapper}>

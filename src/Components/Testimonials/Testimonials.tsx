@@ -6,7 +6,7 @@ import style from './style.module.scss';
 
 export const Testimonials = () => {
     useEffect(() => {
-        SR().reveal('#testimonials', { opacity: 0.2, viewFactor: 0.3, scale: 0.9, delay: 0, reset: false, distance: '50px', origin: 'down' });
+        SR().reveal('#testimonials', { opacity: 0.2, viewFactor: 0.3, scale: 0.9, delay: 0, reset: false, distance: '50px', origin: 'left' });
     }, [])
     return (
         <Flex id="testimonials" center column className={style.wrapper}>

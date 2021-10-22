@@ -26,7 +26,7 @@ export const SuccessAlert = () => {
                 autoHideDuration={6000}
                 onClose={handleClose}>
                 <Alert onClose={() => { dispatch(ToggleContactSuccessAlert(false)) }} variant="filled" severity="success">
-                    Message successfully sent -- we'll contact you shortly!
+                    Message successfully sent -- I'll contact you shortly!
                 </Alert>
             </Snackbar>
         </Stack>
