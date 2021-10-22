@@ -49,3 +49,23 @@
         }
     }
 }
+
+// const LandingImage = () => {
+//     switch (appSize) {
+//       case WindowSizes.large: return <ReusableStaticImage image={Landing} width={40} />
+//       case WindowSizes.mobile: return <ReusableStaticImage image={Landing} width={29} />
+//       case WindowSizes.smallMobile: return <ReusableStaticImage image={Landing} width={24} />
+//       case WindowSizes.tinyMobile: return <ReusableStaticImage image={Landing} width={18} />
+//       default: return <ReusableStaticImage image={Landing} width={40} />
+//     }
+//   }
+
+// const LandingImage = useMemo(() => {
+//     switch (appSize) {
+//       case WindowSizes.large: return <ReusableStaticImage image={Landing} width={40} />
+//       case WindowSizes.mobile: return <ReusableStaticImage image={Landing} width={29} />
+//       case WindowSizes.smallMobile: return <ReusableStaticImage image={Landing} width={24} />
+//       case WindowSizes.tinyMobile: return <ReusableStaticImage image={Landing} width={18} />
+//       default: return <ReusableStaticImage image={Landing} width={40} />
+//     }
+//   }, [appSize])

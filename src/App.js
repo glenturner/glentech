@@ -6,6 +6,7 @@ import { Landing } from './Assets';
 import { ContactModal } from './Components/Modals/ContactModal';
 import { SuccessAlert } from './Components/Alerts';
 import { MobileDrawer } from './Components/MobileDrawer';
+import { LandingImage } from './Components/LandingImage';
 import { Header } from './Components/Header';
 import { Testimonials } from './Components/Testimonials';
 import { ProjectsSection } from './Components/ProjectsSection';
@@ -17,6 +18,7 @@ import { WindowSizes } from './Redux/Models/Utility/WIndowSizes';
 import { UPDATE_WINDOW_SIZE } from './Redux/Constants';
 import { LandingSection } from './Components/LandingSection';
 import './App.css';
+
 
 function App() {
   const dispatch = useDispatch();
@@ -43,26 +45,20 @@ function App() {
       updateWindowSize(WindowSizes.large);
   }
 
-  const landingImageSize = useMemo(() => {
-    switch (appSize) {
-      case WindowSizes.mobile: return 29
-      case WindowSizes.smallMobile: return 24
-      case WindowSizes.tinyMobile: return 18
-      default: return 40
-    }
-  }, [appSize])
 
   useEffect(() => {
     resizeListener();
     window.onresize = resizeListener;
   }, [])
 
+
   const Content = useCallback(() => {
+
     return (
       <Flex center column style={{ overflow: 'hidden' }}>
         <Header />
         <LandingSection />
-        <ReusableStaticImage image={Landing} width={landingImageSize} />
+        <LandingImage />
         <Bio />
         <SkillsSection />
         <ProjectsSection />

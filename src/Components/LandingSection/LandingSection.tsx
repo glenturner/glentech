@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { Flex } from '../Flex';
 import SR from 'scrollreveal';
 import { Avatar, Landing, AppLogo } from '../../Assets';
@@ -11,6 +11,7 @@ export const LandingSection = () => {
         SR().reveal('#sub_title', { opacity: 0.2, viewFactor: 0.3, scale: 0.9, delay: 0, reset: false, distance: '50px', origin: 'left' });
         SR().reveal('#avatar', { opacity: 0.2, viewFactor: 0.3, scale: 0.9, delay: 0, reset: false, distance: '50px', origin: 'up' });
     }, [])
+
     return (
         <Flex id="landing" column center className={style.wrapper}>
             <h3 id="header">U/I Designer, Front-end Developer, & Marketing Strategist</h3>
