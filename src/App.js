@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Flex } from './Components/Flex';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import { Landing } from './Assets';
+import { Girish, Roman, Will } from './Assets';
 import { ContactModal } from './Components/Modals/ContactModal';
 import { SuccessAlert } from './Components/Alerts';
 import { MobileDrawer } from './Components/MobileDrawer';
@@ -25,6 +26,17 @@ function App() {
   const appSize = useSelector((s) => s.utility.appWindowSize)
 
   const updateWindowSize = (size) => dispatch({ type: UPDATE_WINDOW_SIZE, size })
+
+  const asyncImageLoaders = [Girish, Roman, Will]
+    .map(async (src) => {
+      let img;
+      return new Promise((resolve, reject) => {
+        img = new Image();
+        img.onload = resolve;
+        img.onerror = reject;
+        img.src = src;
+      });
+    });
 
   const resizeListener = () => {
     if (window.innerWidth <= 450 && appSize !== WindowSizes.tinyMobile)
@@ -49,8 +61,11 @@ function App() {
   useEffect(() => {
     resizeListener();
     window.onresize = resizeListener;
+    const loadImages = async () => {
+      await Promise.all(asyncImageLoaders);
+    }
+    loadImages();
   }, [])
-
 
   const Content = useCallback(() => {
 
