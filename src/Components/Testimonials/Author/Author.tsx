@@ -14,36 +14,19 @@ export const Author = (props: any) => {
 
     let quoteRef = useRef(null);
 
-    const quoteInterval = null;
-
-    const setQuoteInterval = () => {
-        // let quoteRef: any = null
-        setInterval(() => {
-            gsap.to(quoteRef, { duration: 0.3, opacity: 0, x: 100 })
-            setIndex(index < quotes.length - 1 ? index + 1 : 0)
-            return () => gsap.fromTo(quoteRef, { duration: 0.3, opacity: 0, x: -100 }, { opacity: 1, x: 0 })
-        }, 6000
-        );
-    }
-
-    // const setQuoteInterval = () => {
-    //     // let quoteRef: any = null
-    //     useInterval(() => {
-    //         gsap.to(quoteRef, { duration: 0.3, opacity: 0, x: 100 })
-    //         setIndex(index < quotes.length - 1 ? index + 1 : 0)
-    //         return () => gsap.fromTo(quoteRef, { duration: 0.3, opacity: 0, x: -100 }, { opacity: 1, x: 0 })
-    //     },    // Delay in milliseconds or null to stop it
-    //         isPlaying ? delay : null,
-    //     );
-    // }
-
-    const onSelectOption = (id: any) => {
-        gsap.to(quoteRef.current,
-            { duration: 0.1, x: 100, opacity: 0 })
-        setIndex(id)
+    const onSelectOption = (idx: number) => {
+        setIndex(idx)
         gsap.fromTo(quoteRef.current,
             { duration: 0.1, x: -100, opacity: 0 }, { opacity: 1, x: 0 })
     }
+
+    useEffect(() => {
+        const quoteInterval = setInterval(() => {
+            onSelectOption(index !== quotes.length - 1 ? (index + 1) : 0)
+        }, 6000
+        ); return () => { clearInterval(quoteInterval) }
+    }, [quoteRef.current, index])
+
 
     return (
         <Flex column center className={style.wrapper}>
