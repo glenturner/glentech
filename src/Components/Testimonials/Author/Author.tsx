@@ -16,16 +16,20 @@ export const Author = (props: any) => {
 
     const onSelectOption = (idx: number) => {
         setIndex(idx)
-        gsap.fromTo(quoteRef.current,
-            { duration: 0.1, x: -100, opacity: 0 }, { opacity: 1, x: 0 })
     }
 
     useEffect(() => {
         const quoteInterval = setInterval(() => {
-            onSelectOption(index !== quotes.length - 1 ? (index + 1) : 0)
+            setIndex(index !== quotes.length - 1 ? (index + 1) : 0)
         }, 6000
         ); return () => { clearInterval(quoteInterval) }
     }, [quoteRef.current, index])
+
+    useEffect(() => {
+        gsap.fromTo(quoteRef.current,
+            { duration: 0.1, x: -100, opacity: 0 }, { opacity: 1, x: 0 })
+    }, [index])
+
 
 
     return (
@@ -49,7 +53,7 @@ export const Author = (props: any) => {
                 {
                     quotes.map((item, key) => {
                         return (
-                            <div key={key} onClick={() => onSelectOption(key)} className={`${style.singleDot} ${index === key ? style.white : style.grey}`}></div>
+                            <div key={key} onClick={() => setIndex(key)} className={`${style.singleDot} ${index === key ? style.white : style.grey}`}></div>
                         )
                     })
                 }
