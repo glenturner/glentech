@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { Flex } from './Components/Flex';
 import { BrowserRouter as Router, Route } from "react-router-dom";
-import { Landing } from './Assets';
 import { Girish, Roman, Will } from './Assets';
 import { ContactModal } from './Components/Modals/ContactModal';
 import { SuccessAlert } from './Components/Alerts';
@@ -13,7 +12,6 @@ import { Testimonials } from './Components/Testimonials';
 import { ProjectsSection } from './Components/ProjectsSection';
 import { SkillsSection } from './Components/SkillsSection';
 import { Footer } from './Components/Footer';
-import { ReusableStaticImage } from './Components/ReusableStaticImage';
 import { Bio } from './Components/Bio';
 import { WindowSizes } from './Redux/Models/Utility/WIndowSizes';
 import { UPDATE_WINDOW_SIZE } from './Redux/Constants';
