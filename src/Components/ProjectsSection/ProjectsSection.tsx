@@ -15,7 +15,7 @@ export const ProjectsSection = () => {
             <h2>Projects</h2>
             <HeaderHighlight classes={style.header_accent} />
             <p>Here are a few projects I've been fortunate enough to develop.</p>
-            <Flex center className={style.cards_wrapper}>
+            <Flex id="project_cards" center className={style.cards_wrapper}>
                 <Flex center wrap>
                     {projects?.map((p) => { return <ProjectCard data={p} /> })}
                 </Flex>

@@ -12,12 +12,7 @@ import { useHistory } from "react-router-dom";
 import { Hamburger } from "../Hamburger";
 import { Landing } from "../../Assets";
 
-interface HeaderProps {
-  elementId?: any;
-}
-
-export const Header = (props: HeaderProps) => {
-  const { elementId } = props;
+export const Header = (props: any) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [isLarge, setIsLarge] = useState(true);
@@ -25,8 +20,9 @@ export const Header = (props: HeaderProps) => {
   const landing = document.querySelector('#landing');
   const about = document.querySelector('#about');
   const projects = document.querySelector('#projects');
+  const project_cards = document.querySelector('#project_cards');
   const testimonials = document.querySelector('#testimonials');
-  const rect = landing?.getBoundingClientRect();
+  const author = document.querySelector('#author');
 
   const isInViewport = (el: any) => {
     const rect = el?.getBoundingClientRect();
@@ -38,68 +34,35 @@ export const Header = (props: HeaderProps) => {
     );
   }
 
-  // document.addEventListener('scroll', function () {
-  //   const landingView = isInViewport(landing),
-  //     aboutView = isInViewport(about),
-  //     projectView = isInViewport(projects),
-  //     testimonialsView = isInViewport(testimonials)
+  document.addEventListener('scroll', () => {
+    const landingView = isInViewport(landing),
+      aboutView = isInViewport(about),
+      projectView = isInViewport(projects),
+      projectCardsView = isInViewport(project_cards),
+      testimonialsView = isInViewport(testimonials),
+      authorView = isInViewport(author)
 
-  //   if (landingView) {
-  //     setSelectedRoute(landing)
-  //   } else { selectedRoute }
-  //   if (aboutView) {
-  //     setSelectedRoute(about)
-  //   } else { selectedRoute }
-  //   if (projectView) {
-  //     setSelectedRoute(projects)
-  //   } else { selectedRoute }
-  //   if (testimonialsView) {
-  //     setSelectedRoute(testimonials)
-  //   } else { selectedRoute }
+    if (landingView) {
+      return setSelectedRoute('#landing')
+    }
+    if (aboutView) {
+      return setSelectedRoute('#about')
+    }
+    if (projectView || projectCardsView) {
+      return setSelectedRoute('#projects')
+    }
+    if (testimonialsView || authorView) {
+      return setSelectedRoute('#testimonials')
+    }
 
+  }, {
+    passive: true
+  });
 
-
-  //   // switch (selectedRoute) {
-  //   //   case landingView: return setSelectedRoute(landing)
-  //   //   case aboutView: return console.log('ABOUT IN VIEW')
-  //   //   case projectView: return setSelectedRoute(projects)
-  //   //   case testimonialsView: return setSelectedRoute(testimonials)
-  //   //   default:
-  //   //     return
-  //   // }
-  // }, {
-  //   passive: true
-  // });
 
 
   useEffect(() => {
-    document.addEventListener('scroll', function () {
-      const landingView = isInViewport(landing),
-        aboutView = isInViewport(about),
-        projectView = isInViewport(projects),
-        testimonialsView = isInViewport(testimonials)
-
-      if (landingView) {
-        return setSelectedRoute('#landing')
-      }
-      if (aboutView) {
-        return setSelectedRoute('#about')
-      }
-      if (projectView) {
-        return setSelectedRoute('#projects')
-      }
-      if (testimonialsView) {
-        return setSelectedRoute('#testimonials')
-      }
-
-    }, {
-      passive: true
-    });
-  }, [])
-
-
-  useEffect(() => {
-    setSelectedRoute(history.location.hash)
+    setSelectedRoute("#landing")
     //@ts-ignore
     const unlisten = history.listen((location: any, action: any) => {
       // If there's a hash in the url then don't manage the scroll
@@ -111,6 +74,31 @@ export const Header = (props: HeaderProps) => {
     });
     return () => { unlisten() }
   }, [history])
+
+  // document.addEventListener('scroll', () => {
+  //   const landingView = isInViewport(landing),
+  //     aboutView = isInViewport(about),
+  //     projectView = isInViewport(projects),
+  //     projectCardsView = isInViewport(project_cards),
+  //     testimonialsView = isInViewport(testimonials),
+  //     authorView = isInViewport(author)
+
+  //   if (landingView) {
+  //     return setSelectedRoute('#landing')
+  //   }
+  //   if (aboutView) {
+  //     return setSelectedRoute('#about')
+  //   }
+  //   if (projectView || projectCardsView) {
+  //     return setSelectedRoute('#projects')
+  //   }
+  //   if (testimonialsView || authorView) {
+  //     return setSelectedRoute('#testimonials')
+  //   }
+
+  // }, {
+  //   passive: true
+  // });
 
 
   return (
