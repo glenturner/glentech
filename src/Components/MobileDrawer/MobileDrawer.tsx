@@ -60,7 +60,6 @@ const MobileDrawerComponent = DelayUnmount((props: any) => {
     gsap.to("#background-overlay", { opacity: 1.0, duration: 0.3 });
     gsap.from(".top-nav-secondary", { x: window.innerWidth, opacity: 0, duration: 0.3 });
     gsap.to(".top-nav-secondary", { x: window.innerWidth - topNav.innerWidth, opacity: 1.0, delay: 0.1, duration: 0.3 });
-    // return window.removeEventListener(listener, () => { });
   }, [])
 
   useEffect(() => {
@@ -87,6 +86,7 @@ const MobileDrawerComponent = DelayUnmount((props: any) => {
           <div className={style.scrollable}>
             <div className={style.flexWrapper}>
               <ul className={style.optionsList}>
+                <Option route="#landing" label='LANDING' />
                 <Option route="#about" label='ABOUT' />
                 <Option route="#projects" label='PROJECTS' />
                 <Option route="#testimonials" label='TESTIMONIALS' />

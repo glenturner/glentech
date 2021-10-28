@@ -1,6 +1,7 @@
 import React, { useMemo } from 'react';
 import { AppState } from '../../Redux/Models';
 import { useSelector } from 'react-redux';
+import { Flex } from '../Flex';
 import { Landing } from '../../Assets';
 import { WindowSizes } from '../../Redux/Models/Utility/WIndowSizes';
 import { ReusableStaticImage } from '../ReusableStaticImage';
@@ -19,8 +20,8 @@ export const LandingImage = () => {
     }, [appSize])
 
     return (
-        <>
+        <Flex center>
             <ReusableStaticImage image={Landing} width={landingImageSize} />
-        </>
+        </Flex>
     )
 }
