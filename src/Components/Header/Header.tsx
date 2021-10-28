@@ -10,15 +10,59 @@ import { AppState } from "../../Redux/Models";
 import { Logo } from "../Logo";
 import { useHistory } from "react-router-dom";
 import { Hamburger } from "../Hamburger";
+import { Landing } from "../../Assets";
 
 export const Header = (props: any) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [isLarge, setIsLarge] = useState(true);
   const [selectedRoute, setSelectedRoute] = useState<any>(null);
+  const landing = document.querySelector('#landing');
+  const about = document.querySelector('#about');
+  const projects = document.querySelector('#projects');
+  const project_cards = document.querySelector('#project_cards');
+  const testimonials = document.querySelector('#testimonials');
+  const author = document.querySelector('#author');
+
+  const isInViewport = (el: any) => {
+    const rect = el?.getBoundingClientRect();
+    return (
+      rect && rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  document.addEventListener('scroll', () => {
+    const landingView = isInViewport(landing),
+      aboutView = isInViewport(about),
+      projectView = isInViewport(projects),
+      projectCardsView = isInViewport(project_cards),
+      testimonialsView = isInViewport(testimonials),
+      authorView = isInViewport(author)
+
+    if (landingView) {
+      return setSelectedRoute('#landing')
+    }
+    if (aboutView) {
+      return setSelectedRoute('#about')
+    }
+    if (projectView || projectCardsView) {
+      return setSelectedRoute('#projects')
+    }
+    if (testimonialsView || authorView) {
+      return setSelectedRoute('#testimonials')
+    }
+
+  }, {
+    passive: true
+  });
+
+
 
   useEffect(() => {
-    setSelectedRoute(history.location.pathname)
+    setSelectedRoute("#landing")
     //@ts-ignore
     const unlisten = history.listen((location: any, action: any) => {
       // If there's a hash in the url then don't manage the scroll
@@ -31,6 +75,31 @@ export const Header = (props: any) => {
     return () => { unlisten() }
   }, [history])
 
+  // document.addEventListener('scroll', () => {
+  //   const landingView = isInViewport(landing),
+  //     aboutView = isInViewport(about),
+  //     projectView = isInViewport(projects),
+  //     projectCardsView = isInViewport(project_cards),
+  //     testimonialsView = isInViewport(testimonials),
+  //     authorView = isInViewport(author)
+
+  //   if (landingView) {
+  //     return setSelectedRoute('#landing')
+  //   }
+  //   if (aboutView) {
+  //     return setSelectedRoute('#about')
+  //   }
+  //   if (projectView || projectCardsView) {
+  //     return setSelectedRoute('#projects')
+  //   }
+  //   if (testimonialsView || authorView) {
+  //     return setSelectedRoute('#testimonials')
+  //   }
+
+  // }, {
+  //   passive: true
+  // });
+
 
   return (
     <Flex id="app-header" row className={style.wrapper} align="center" justify="space-between">
@@ -41,6 +110,7 @@ export const Header = (props: any) => {
           padding: '20px', marginLeft: 80, alignSelf: 'center'
         }}>
           <Flex style={{ marginRight: '20px' }}>
+            <NavLink route="#landing" text={"Landing"} selected={selectedRoute === '#landing'} />
             <NavLink route="#about" text={"About"} selected={selectedRoute === '#about'} />
             <NavLink route="#projects" text={"Projects"} selected={selectedRoute === '#projects'} />
             <NavLink route="#testimonials" text={"Testimonials"} selected={selectedRoute === '#testimonials'} />

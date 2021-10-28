@@ -9,8 +9,6 @@ import style from './style.module.scss';
 
 export const Author = (props: any) => {
     const [index, setIndex] = useState(0)
-    const [delay, setDelay] = useState<number>(6000)
-    const [isPlaying, setPlaying] = useState<boolean>(false)
 
     let quoteRef = useRef(null);
 
@@ -30,10 +28,8 @@ export const Author = (props: any) => {
             { duration: 0.1, x: -100, opacity: 0 }, { opacity: 1, x: 0 })
     }, [index])
 
-
-
     return (
-        <Flex column center className={style.wrapper}>
+        <Flex id="author" column center className={style.wrapper}>
             <Flex center column>
                 <div ref={quoteRef}>
                     <Flex center column className={style.quote_wrapper}>
