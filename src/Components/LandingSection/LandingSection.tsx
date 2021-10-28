@@ -16,9 +16,7 @@ export const LandingSection = () => {
         <Flex id="landing" column center className={style.wrapper}>
             <h3 id="header">U/I Designer, Front-end Developer, & Marketing Strategist</h3>
             <span id="sub_title" className={style.sub_title}>I design and code beautifully simple things, and I love what I do.</span>
-            <Flex>
-                <ReusableStaticImage id="avatar" classes={style.avatar} image={Avatar} width={15} />
-            </Flex>
+            <ReusableStaticImage id="avatar" classes={style.avatar} image={Avatar} width={15} />
         </Flex>
     );
 };
