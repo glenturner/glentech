@@ -1,17 +1,12 @@
-import { ForumOutlined } from "@material-ui/icons";
 import React from "react";
-import { useDispatch } from "react-redux";
 import { Flex } from "../Flex";
-import { Button } from "../Button";
 import { Linkedin, Github } from "../../Assets";
 import { ReusableStaticImage } from "../ReusableStaticImage";
 import { AppLogo } from "../../Assets";
 import { NavGroup, NavGroupItem } from "./NavGroup";
-import { ToggleContactModal } from "../../Redux/Actions";
 import style from "./style.module.scss";
 
 export const Footer = () => {
-  const dispatch = useDispatch();
   const navGroups: NavGroupItem[] = [
     {
       main: { label: "", to: '/#landing' },

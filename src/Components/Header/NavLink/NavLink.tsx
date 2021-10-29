@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Flex } from "../../Flex";
-
 import style from "./style.module.scss";
 import { HashLink as Link } from 'react-router-hash-link';
+
 export const NavLink = (props: {
   text: any;
   subItems?: { text: string, to: string }[];

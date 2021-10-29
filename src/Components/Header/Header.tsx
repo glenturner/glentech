@@ -1,21 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { NavLink } from "./NavLink";
 import { Flex } from "../Flex";
 import style from "./style.module.scss";
 import { Button } from "../Button";
 import { ForumOutlined } from "@material-ui/icons";
 import { ToggleContactModal } from "../../Redux/Actions";
-import { AppState } from "../../Redux/Models";
 import { Logo } from "../Logo";
 import { useHistory } from "react-router-dom";
 import { Hamburger } from "../Hamburger";
-import { Landing } from "../../Assets";
 
 export const Header = (props: any) => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const [isLarge, setIsLarge] = useState(true);
   const [selectedRoute, setSelectedRoute] = useState<any>(null);
 
   const isInViewport = (el: any) => {
@@ -44,20 +41,16 @@ export const Header = (props: any) => {
         authorView = isInViewport(author)
 
       if (landingView) {
-        console.log(`LANDING VIEW`);
-        setSelectedRoute('#landing')
+        return setSelectedRoute('#landing')
       }
       if (aboutView) {
-        console.log(`ABOUT VIEW`);
-        setSelectedRoute('#about')
+        return setSelectedRoute('#about')
       }
       if (projectView || projectCardsView) {
-        console.log(`PROJECTS VIEW`);
-        setSelectedRoute('#projects')
+        return setSelectedRoute('#projects')
       }
       if (testimonialsView || authorView) {
-        console.log(`TESTIMONIALS VIEW`);
-        setSelectedRoute('#testimonials')
+        return setSelectedRoute('#testimonials')
       }
 
     };
@@ -81,36 +74,10 @@ export const Header = (props: any) => {
     return () => { unlisten() }
   }, [history])
 
-  // document.addEventListener('scroll', () => {
-  //   const landingView = isInViewport(landing),
-  //     aboutView = isInViewport(about),
-  //     projectView = isInViewport(projects),
-  //     projectCardsView = isInViewport(project_cards),
-  //     testimonialsView = isInViewport(testimonials),
-  //     authorView = isInViewport(author)
-
-  //   if (landingView) {
-  //     return setSelectedRoute('#landing')
-  //   }
-  //   if (aboutView) {
-  //     return setSelectedRoute('#about')
-  //   }
-  //   if (projectView || projectCardsView) {
-  //     return setSelectedRoute('#projects')
-  //   }
-  //   if (testimonialsView || authorView) {
-  //     return setSelectedRoute('#testimonials')
-  //   }
-
-  // }, {
-  //   passive: true
-  // });
-
-
   return (
     <Flex id="app-header" row className={style.wrapper} align="center" justify="space-between">
       <Logo />
-      <Flex justify="flex-end" style={{ alignSelf: isLarge ? 'flex-start' : 'center', flex: 1 }}>
+      <Flex justify="flex-end" style={{ alignSelf: 'flex-start', flex: 1 }}>
         <Flex className={style.navSection} align="center" style={{
           transition: '200ms',
           padding: '20px', marginLeft: 80, alignSelf: 'center'

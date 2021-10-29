@@ -1,20 +1,12 @@
-import React, { useEffect, useState, useMemo, useRef } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Flex } from '../../Flex';
 import { gsap } from 'gsap';
-import SR from 'scrollreveal';
-import { useInterval } from 'usehooks-ts'
 import { quotes } from '../../../Constants/Content';
-import { ReusableStaticImage } from '../../ReusableStaticImage';
 import style from './style.module.scss';
 
 export const Author = (props: any) => {
     const [index, setIndex] = useState(0)
-
     let quoteRef = useRef(null);
-
-    const onSelectOption = (idx: number) => {
-        setIndex(idx)
-    }
 
     useEffect(() => {
         const quoteInterval = setInterval(() => {
