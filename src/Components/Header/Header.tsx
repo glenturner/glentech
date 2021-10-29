@@ -17,12 +17,6 @@ export const Header = (props: any) => {
   const dispatch = useDispatch();
   const [isLarge, setIsLarge] = useState(true);
   const [selectedRoute, setSelectedRoute] = useState<any>(null);
-  const landing = document.querySelector('#landing');
-  const about = document.querySelector('#about');
-  const projects = document.querySelector('#projects');
-  const project_cards = document.querySelector('#project_cards');
-  const testimonials = document.querySelector('#testimonials');
-  const author = document.querySelector('#author');
 
   const isInViewport = (el: any) => {
     const rect = el?.getBoundingClientRect();
@@ -34,30 +28,42 @@ export const Header = (props: any) => {
     );
   }
 
-  document.addEventListener('scroll', () => {
-    const landingView = isInViewport(landing),
-      aboutView = isInViewport(about),
-      projectView = isInViewport(projects),
-      projectCardsView = isInViewport(project_cards),
-      testimonialsView = isInViewport(testimonials),
-      authorView = isInViewport(author)
+  useEffect(() => {
+    const scrollEventLister = (e: any) => {
+      const landing = document.querySelector('#landing');
+      const about = document.querySelector('#about');
+      const projects = document.querySelector('#projects');
+      const project_cards = document.querySelector('#project_cards');
+      const testimonials = document.querySelector('#testimonials');
+      const author = document.querySelector('#author');
+      const landingView = isInViewport(landing),
+        aboutView = isInViewport(about),
+        projectView = isInViewport(projects),
+        projectCardsView = isInViewport(project_cards),
+        testimonialsView = isInViewport(testimonials),
+        authorView = isInViewport(author)
 
-    if (landingView) {
-      return setSelectedRoute('#landing')
-    }
-    if (aboutView) {
-      return setSelectedRoute('#about')
-    }
-    if (projectView || projectCardsView) {
-      return setSelectedRoute('#projects')
-    }
-    if (testimonialsView || authorView) {
-      return setSelectedRoute('#testimonials')
-    }
+      if (landingView) {
+        console.log(`LANDING VIEW`);
+        setSelectedRoute('#landing')
+      }
+      if (aboutView) {
+        console.log(`ABOUT VIEW`);
+        setSelectedRoute('#about')
+      }
+      if (projectView || projectCardsView) {
+        console.log(`PROJECTS VIEW`);
+        setSelectedRoute('#projects')
+      }
+      if (testimonialsView || authorView) {
+        console.log(`TESTIMONIALS VIEW`);
+        setSelectedRoute('#testimonials')
+      }
 
-  }, {
-    passive: true
-  });
+    };
+    document.addEventListener('scroll', scrollEventLister);
+    return () => document.removeEventListener("scroll", scrollEventLister)
+  }, [])
 
 
 

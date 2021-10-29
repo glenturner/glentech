@@ -17,17 +17,7 @@ const Option = (props: any) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const [selectedRoute, setSelectedRoute] = useState<any>(null);
-  let option = null;
   let icon: any = null;
-
-  const onMouseLeave = () => gsap.to(icon, { x: 0, duration: 0.1 })
-  const onMouseEnter = () => gsap.to(icon, { x: 10, duration: 0.1 })
-
-  const onClick = (e: React.SyntheticEvent) => {
-    e.stopPropagation();
-    dispatch(ToggleMobileNavigation(false));
-    setTimeout(() => history.push(props.location.hash), 300)
-  }
 
   useEffect(() => {
     setSelectedRoute(history.location.pathname)
