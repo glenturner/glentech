@@ -1,7 +1,5 @@
 import React from 'react'
 import { AppLogo } from '../../Assets';
-import gsap from 'gsap'
-import { Flex } from '../Flex';
 import style from './style.module.scss';
 
 export const Logo = (props: any) => {

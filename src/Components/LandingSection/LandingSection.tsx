@@ -1,7 +1,7 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { Flex } from '../Flex';
 import SR from 'scrollreveal';
-import { Avatar, Landing, AppLogo } from '../../Assets';
+import { Avatar } from '../../Assets';
 import { ReusableStaticImage } from '../ReusableStaticImage';
 import style from './style.module.scss';
 

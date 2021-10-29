@@ -45,7 +45,6 @@ export const ModalWrapper = (props: ModalWrapperProps) => {
                     overflow: "hidden",
                     maxHeight: "calc(100vh - 100px)",
                     boxShadow: '0 0 3rem 1rem rgb(95 95 95 / 25%)',
-                    // border: "2px solid #30363a",
                 }}
             >
                 <Flex
@@ -53,7 +52,6 @@ export const ModalWrapper = (props: ModalWrapperProps) => {
                     align="center"
                     style={{
                         padding: '10px',
-                        // borderBottom: "1px solid #dadfe4",
                     }}
                 >
                     <Typography variant="h5" style={{ color: "#516f90" }}>
@@ -72,7 +70,6 @@ export const ModalWrapper = (props: ModalWrapperProps) => {
                         flexDirection: "column",
                         width: "100%",
                         flex: 1,
-                        // maxHeight: "100%",
                         overflowY: manageScroll ? "scroll" : "hidden",
                         marginTop: 10,
                     }}
@@ -81,7 +78,6 @@ export const ModalWrapper = (props: ModalWrapperProps) => {
                 </div>
                 {closerStyle === "done-button" || closerStyle === "button" ? (
                     <Button
-                        // classes={classes}
                         color="primary"
                         variant="contained"
                         onClick={() => toggleModal(false)}
