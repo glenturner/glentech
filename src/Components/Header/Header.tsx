@@ -33,23 +33,17 @@ export const Header = (props: any) => {
       const project_cards = document.querySelector('#project_cards');
       const testimonials = document.querySelector('#testimonials');
       const author = document.querySelector('#author');
-      const landingView = isInViewport(landing),
-        aboutView = isInViewport(about),
-        projectView = isInViewport(projects),
-        projectCardsView = isInViewport(project_cards),
-        testimonialsView = isInViewport(testimonials),
-        authorView = isInViewport(author)
 
-      if (landingView) {
+      if (isInViewport(landing)) {
         return setSelectedRoute('#landing')
       }
-      if (aboutView) {
+      if (isInViewport(about)) {
         return setSelectedRoute('#about')
       }
-      if (projectView || projectCardsView) {
+      if (isInViewport(projects) || isInViewport(project_cards)) {
         return setSelectedRoute('#projects')
       }
-      if (testimonialsView || authorView) {
+      if (isInViewport(testimonials) || isInViewport(author)) {
         return setSelectedRoute('#testimonials')
       }
 
