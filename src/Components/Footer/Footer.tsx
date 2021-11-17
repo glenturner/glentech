@@ -61,7 +61,7 @@ export const Footer = () => {
           width={2}
         />
         <ReusableStaticImage
-          onClick={() => window.open('https://www.linkedin.com/in/%F0%9F%91%A8%F0%9F%8F%BB%E2%80%8D%F0%9F%92%BB-glen-turner-a1870222/', '_blank')}
+          onClick={() => window.open('https://www.linkedin.com/in/glen-turner-a1870222/', '_blank')}
           classes={style.linkedin_icon}
           image={Linkedin}
           width={2}
