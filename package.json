@@ -32,6 +32,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "cd dist && gcloud app deploy",
+    "prod": "gcloud config set project glentech",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -1,10 +1,7 @@
 import {
-    FrontEnd,
-    Designer,
     Holsum,
     Bimbo,
     WbcLogo,
-    NwkLogo,
     EhaLogo,
     UserInterface,
     Ux,
@@ -73,15 +70,6 @@ export const projects = [
         url: 'https://bimbo-web.ue.r.appspot.com',
         description: 'This is a project still in progress, Bimbopr is an undisputed leader in the baking industry.',
         id: 'bimbo',
-        width: 15
-    },
-    {
-        logo: NwkLogo,
-        background: '#dadfe4',
-        name: 'KnowWeKnowTv',
-        url: 'https://nowweknowtv.com',
-        description: 'NowWeKnowTv, hosted by actor Steve Guttenberg educates audiences with remarkable insight into industries and businesses.',
-        id: 'nwk',
         width: 15
     },
     {
