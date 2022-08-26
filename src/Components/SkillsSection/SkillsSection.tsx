@@ -7,7 +7,9 @@ import style from './style.module.scss';
 export const SkillsSection = () => {
     return (
         <Flex className={style.section}>
+            <Flex className={style.boxWrapper}>
             {skills?.map((s: any) => { return <SkillBox classes={style.box} data={s} /> })}
+            </Flex>
         </Flex>
     );
 };

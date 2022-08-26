@@ -10,7 +10,7 @@ export const SuccessAlert = () => {
     const dispatch = useDispatch();
     const isOpen = useSelector((s: AppState) => s.utility.toggleContactSuccessAlert);
 
-    const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
+    const handleClose = (event?: any, reason?: string) => {
         if (reason === 'clickaway') {
             return;
         }

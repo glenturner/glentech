@@ -3,8 +3,7 @@
 
 .wrapper {
     width: 100%;
-    height: 100vh;
-    margin-top: 300px;
+    margin: 2rem 0;
     p {
         font-size: 24px;
         font-weight: 400;
@@ -21,24 +20,6 @@
     padding: 20px 90px;
     margin-top: 30px;
     justify-content: flex-start;
-}
-
-@media only screen and (max-width: 1440px) {
-    .wrapper {
-        margin-top: 450px;
-    }
-}
-
-@media only screen and (max-width: $tablet) {
-    .wrapper {
-        margin-top: 100px;
-    }
-}
-
-@media only screen and (max-width: 1025px) {
-    .wrapper {
-        margin-top: 400px;
-    }
 }
 
 @media only screen and (max-width: $smallMobileDisplay) {
