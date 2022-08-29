@@ -25,6 +25,10 @@ function App() {
 
   const updateWindowSize = (size) => dispatch({ type: UPDATE_WINDOW_SIZE, size })
 
+  // const mapKeyValuePairs = (obj) => {
+  //   return Object.keys(obj).map((key) => { return { key, value: obj[key] } }) // returns an array of key value pairs
+  // }
+
   const asyncImageLoaders = [Girish, Roman, Will]
     .map(async (src) => {
       let img;
